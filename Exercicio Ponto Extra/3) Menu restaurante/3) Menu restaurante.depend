@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1536035326 source:c:\users\tavin\desktop\exercicios em c\3) menu restaurante\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
