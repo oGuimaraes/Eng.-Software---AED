@@ -17,11 +17,8 @@ int main()
         printf("1) Número Fatorial \n");
         printf("2) Sequencia de Fibonacci\n");
         printf("3) Numero com caracteristica\n");
-        printf("4) Tabuada\n\n");
-
-        printf("________________________________");
-        printf("        Exercicio 3ª Lista     \n");
-        printf("5) Números de 0 a 10 x quadrado x cubo")
+        printf("4) Taboada\n\n");
+        printf("5) Tuboada Completa\n");
 
         printf("0) Sair\n");
         printf("________________________________\n");
@@ -97,7 +94,6 @@ int exercicio2()
         printf("%d ", c);
         a = b;
         b = c;
-        cont = cont+1;
     };
 }
 
@@ -134,6 +130,19 @@ int exercicio4(){
 }
 
 int exercicio5(){
+    int numero, mult, i, j;
+
+    for (i = 1; i<10; i++){
+        printf("---");
+        printf("\n");
+        printf("Taboada do %d \n", i);
+
+        for (j = 1; j<10; j++){
+            mult = i * j;
+            printf("%d x %d = %d \n", i, j, mult);
+        }
+
+    }
 }
 
 
