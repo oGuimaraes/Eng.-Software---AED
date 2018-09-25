@@ -28,7 +28,8 @@ int main()
         printf("7) Números Pares e Impar\n");
         printf("8) Maior, menor e média\n");
         printf("9) Somatório\n");
-        printf("10) Calculo da Série\n");
+        printf("10) Calculo da SérieI\n");
+        printf("11) Cálculo da Série II\n");
 
 
         printf("\n0) Sair\n");
@@ -76,6 +77,10 @@ int main()
         case 10:
             exercicio10();
             break;
+
+        case 11:
+        exercicio11();
+        break;
 
         case 0:
             system("pause;");
@@ -265,13 +270,32 @@ int exercicio10(){
     scanf("%d", & numero);
 
     while (cont < numero){
-        fracao = (float)num / pow(den,3) * sinal;
+        fracao = num / (float)pow(den,3) * sinal;
         s = s + fracao;
         den = den + 2;
         sinal = sinal * (-1);
         cont++;
     }
-    printf("S = %.2f", s);
+    printf("S = %.6f \n", s);
 
+}
+
+int exercicio11(){
+    int numero, num = 1, den, sinal = 1, cont = 0;
+    float s = 0, fracao;
+
+    printf("Escreva um termo: ");
+    scanf("%d", & numero);
+    den = numero;
+
+    while (cont < numero){
+        fracao = (float)(num / den) * sinal;
+        s = s + fracao;
+        num++;
+        den = den - 1;
+        sinal = sinal * (-1);
+        cont++;
+    }
+    printf("S = %.2f \n", s);
 }
 
