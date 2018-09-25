@@ -28,8 +28,9 @@ int main()
         printf("7) Números Pares e Impar\n");
         printf("8) Maior, menor e média\n");
         printf("9) Somatório\n");
-        printf("10) Calculo da SérieI\n");
+        printf("10) Calculo da Série I\n");
         printf("11) Cálculo da Série II\n");
+        printf("12) Dado 2 valores, mostre os divisores naquele intervalo \n");
 
 
         printf("\n0) Sair\n");
@@ -79,8 +80,12 @@ int main()
             break;
 
         case 11:
-        exercicio11();
-        break;
+            exercicio11();
+            break;
+
+        case 12:
+            exercicio12();
+            break;
 
         case 0:
             system("pause;");
@@ -297,5 +302,25 @@ int exercicio11(){
         cont++;
     }
     printf("S = %.2f \n", s);
+}
+
+int exercicio12(){
+    int inicio, fim, i;
+
+    printf("Escreva o primeiro valor do intervalo: ");
+    scanf("%d", & inicio);
+    printf("Escreva o segundo valor do intervalo: ");
+    scanf("%d",& fim);
+
+    for (inicio = inicio; inicio <= fim; inicio++ ){
+        printf("Divisores do %d: 1", inicio);
+
+        for(i = 2; i < 10; i++){
+            if (inicio % i == 0){
+                printf(", %d", i);
+            }
+        }
+        printf("\n");
+    }
 }
 
