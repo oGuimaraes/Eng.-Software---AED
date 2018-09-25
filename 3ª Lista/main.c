@@ -27,6 +27,7 @@ int main()
         printf("6) Quadrado e Cubo\n");
         printf("7) Números Pares e Impar\n");
         printf("8) Maior, menor e média");
+        printf("9) Somatório");
 
 
         printf("\n0) Sair\n");
@@ -65,6 +66,10 @@ int main()
 
         case 8:
             exercicio8();
+            break;
+
+        case 9:
+            exercicio9();
             break;
 
         case 0:
@@ -233,5 +238,17 @@ int exercicio8(){
     printf("A média é %2.f, o maior número é %d e o menor é %d.", media, maior, menor, contNumero, total);
 }
 
+int exercicio9(){
+    int numero, soma = 0, cont = 0;
 
+    printf("Escreva um número: ");
+    scanf("%d", & numero);
+
+    for (cont = 0; cont <= numero; cont++){
+        soma = soma + cont;
+    }
+
+    printf("Somatorio: %d \n", soma);
+
+}
 
