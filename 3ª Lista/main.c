@@ -26,8 +26,9 @@ int main()
         printf("             LISTA 3             \n");
         printf("6) Quadrado e Cubo\n");
         printf("7) Números Pares e Impar\n");
-        printf("8) Maior, menor e média");
-        printf("9) Somatório");
+        printf("8) Maior, menor e média\n");
+        printf("9) Somatório\n");
+        printf("10) Calculo da Série\n");
 
 
         printf("\n0) Sair\n");
@@ -70,6 +71,10 @@ int main()
 
         case 9:
             exercicio9();
+            break;
+
+        case 10:
+            exercicio10();
             break;
 
         case 0:
@@ -129,7 +134,7 @@ int exercicio3()
     int numero, dividendo, resto;
     float somaTermo;
 
-    for (numero = 1000; numero < 10000; numero++)
+    for (numero = 1; numero <= 99999; numero++)
     {
         dividendo = numero/100;
         resto = numero % 100;
@@ -249,6 +254,24 @@ int exercicio9(){
     }
 
     printf("Somatorio: %d \n", soma);
+
+}
+
+int exercicio10(){
+    int numero, num = 1, den = 1, sinal = 1, cont = 0;
+    float s = 0, fracao;
+
+    printf("Escreva um termo: ");
+    scanf("%d", & numero);
+
+    while (cont < numero){
+        fracao = (float)num / pow(den,3) * sinal;
+        s = s + fracao;
+        den = den + 2;
+        sinal = sinal * (-1);
+        cont++;
+    }
+    printf("S = %.2f", s);
 
 }
 
