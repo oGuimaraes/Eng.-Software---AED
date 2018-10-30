@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1540911100 source:c:\users\tavin\desktop\exercicios em c\exercicios funções\prova2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<math.h>
+	<string.h>
+	<stdbool.h>
+

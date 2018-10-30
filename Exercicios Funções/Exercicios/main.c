@@ -42,6 +42,14 @@ int main()
             exercicio7();
             break;
 
+        case 5:
+            exemplo();
+            break;
+
+        case 6:
+            primo();
+            break;
+
         case 0:
             system("pause");
             break;
@@ -169,7 +177,6 @@ int exercicio5()
 
 
 float codigoPreco(preco)
-
 {
     switch(preco)
     {
@@ -206,7 +213,71 @@ int exercicio7(){
 
     total = codigoPreco(num) * quantidade;
 
-    printf("O total é %.2f \n", total);
+    printf("O total é %.2f. \n", total);
 
+}
+
+void somaReferencia(int *n){
+    *n = *n + 1;
+}
+
+int exemplo(){
+    int x;
+    printf("Escreva um número: ");
+    scanf("%d", &x);
+    somaReferencia(&x);
+    printf("Depois da função: x = %d\n", x);
+}
+
+int primos()
+{
+    int i, n;
+    int div = 0;
+
+    for(n = 10; n <= 70; n++)
+    {
+        for (i = 1; i <= n; i++)
+        {
+            if (n % i == 0)
+            {
+                div++;
+            }
+        }
+        if(div == 2)
+        {
+            printf(", %d", n);
+        }
+        div = 0;
+    }
+
+    return 0;
+
+
+
+}
+
+int somaPrimos(int nInicial,int nFinal){
+    int aux = 0;
+
+    printf("Escolha o valor inicial entre 10 e 70:");
+    scanf("%d" & nInicial);
+
+    printf("Escolha o valor final entre 10 e 70:");
+    scanf("%d" & nFinal);
+
+    if(nInicial > nFinal){
+        aux = nInicial;
+        nInicial = nFinal;
+        nFinal = nInicial;
+    }
+
+}
+
+int exercicio1(){
+    printf("Escolha o valor inicial entre 10 e 70:");
+    scanf("%d" & nInicial);
+
+    printf("Escolha o valor final entre 10 e 70:");
+    scanf("%d" & nFinal);
 }
 
