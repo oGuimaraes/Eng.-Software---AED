@@ -31,6 +31,10 @@ int main()
             exercicio2();
             break;
 
+        case 3:
+            exercicio3();
+            break;
+
         case 0:
             system("pause");
             break;
@@ -52,6 +56,7 @@ void leVetor(int *, int,char *);
 void imprimeVetor(int *, int, char *);
 int fatorial(int);
 int confereIgualdade(int *, int, int);
+int inverteVetor(float *, int);
 
 void leVetor(int *vetor, int tamVetor, char *nomeVetor){
     for (int i = 0; i < tamVetor; i++){
@@ -90,6 +95,18 @@ int confereIgualdade(int *v, int tamV, int elemento){
     return existe;
 }
 
+int inverteVetor(float *v, int tam){
+    int meio = tam/2;
+    float aux;
+
+    for (int i = 0; i < meio; i++){
+        aux = v[i];
+        v[i] = v[tam - i - 1];
+        v[tam - i - 1] = aux;
+    }
+
+}
+
 int exercicio1(){
     int A[5], B[5], i;
     leVetor(A, 5, "A");
@@ -111,7 +128,6 @@ int exercicio2(){
             tamC++;
         }
    }
-
     for (i = 0; i < 5; i++){
         if(!confereIgualdade(C, tamC, B[i])){
             C[tamC] = B[i];
@@ -121,5 +137,19 @@ int exercicio2(){
    imprimeVetor(C,tamC, "C");
    printf("\n");
     return 0;
+}
+
+int exercicio3(){
+    float A[10];
+    int tam = 10;
+
+    leVetor(A, tam, "A");
+    inverteVetor(A, 10);
+
+    printf("\n ____________________");
+    printf("\n Vetor A invertido: \n");
+    imprimeVetor(A, 10, "A");
+    printf("\n_____________________");
+
 }
 
