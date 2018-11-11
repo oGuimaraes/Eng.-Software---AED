@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1541915982 source:c:\users\tavin\desktop\exercicios em c\exercicios arranjo\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
