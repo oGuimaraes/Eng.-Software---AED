@@ -115,11 +115,11 @@ int inverteVetor(float *v, int tam){
 
 }
 
-int ordenaVetor(float *v, int tam){
+int ordenaVetor(int *v, int tam){
     int aux;
 
     for (int i = 0; i < tam; i++){
-        for (int j = 0; j < tam; i++){
+        for (int j = i; j < tam; j++){
             if (v[i] > v[j]){
                 aux = v[i];
                 v[i] = v[j];
@@ -193,15 +193,16 @@ int exercicio4() {
 int exercicio5() {
     int A[10], tam = 10;
 
-    leVetor(A, 10, "A");
+    leVetor(A, tam, "A");
     printf("\nVetor Desordenado: \n");
-    imprimeVetor(A, 10, "A");
+    imprimeVetor(A, tam, "A");
 
     printf("\n");
-    ordenaVetor(A, 10);
+    ordenaVetor(A, tam);
     printf("\nVetor Ordenado: \n");
-    imprimeVetor(A, 10, "A");
+    imprimeVetor(A, tam, "A");
+    printf("\n");
 
-
+    return 0;
 }
 
