@@ -35,6 +35,14 @@ int main()
             exercicio3();
             break;
 
+        case 4:
+            exercicio4();
+            break;
+
+        case 5:
+            exercicio5();
+            break;
+
         case 0:
             system("pause");
             break;
@@ -107,6 +115,20 @@ int inverteVetor(float *v, int tam){
 
 }
 
+int ordenaVetor(float *v, int tam){
+    int aux;
+
+    for (int i = 0; i < tam; i++){
+        for (int j = 0; j < tam; i++){
+            if (v[i] > v[j]){
+                aux = v[i];
+                v[i] = v[j];
+                v[j] = aux;
+            }
+        }
+    }
+}
+
 int exercicio1(){
     int A[5], B[5], i;
     leVetor(A, 5, "A");
@@ -146,10 +168,40 @@ int exercicio3(){
     leVetor(A, tam, "A");
     inverteVetor(A, 10);
 
-    printf("\n ____________________");
     printf("\n Vetor A invertido: \n");
     imprimeVetor(A, 10, "A");
-    printf("\n_____________________");
+
+}
+
+int exercicio4() {
+    int parImpar[2], A[10],tam = 10;
+
+    for (int i = 0; i < 2; i++){
+        parImpar[i] = 0;
+    }
+
+    leVetor(A, 10, "A");
+
+    for (int i = 0; i < tam; i++){
+        parImpar[A[i]%2] = parImpar[A[i]%2]+1;
+    }
+
+    printf("\n Valores Impares: %d", parImpar[0]);
+    printf("\n Valores Pares: %d \n\n", parImpar[1]);
+}
+
+int exercicio5() {
+    int A[10], tam = 10;
+
+    leVetor(A, 10, "A");
+    printf("\nVetor Desordenado: \n");
+    imprimeVetor(A, 10, "A");
+
+    printf("\n");
+    ordenaVetor(A, 10);
+    printf("\nVetor Ordenado: \n");
+    imprimeVetor(A, 10, "A");
+
 
 }
 
