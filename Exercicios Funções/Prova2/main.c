@@ -122,48 +122,52 @@ int exercicio1(){
 
 int exercicio2() {
     int nTermos;
+    float resultado;
     printf("Escreva o número de termos da soma: ");
     scanf("%d", &nTermos);
 
-    soma(nTermos);
-}
+    resultado = soma(nTermos);
 
-
-int soma(int n){
-    float soma = 0, r = 0;
-    int num = 2, div = 1;
-
-    for (int i = 0; i < n; i++){
-        soma = soma + ((float)num/(float)div);
-        printf("I= %d, NUM=%d, DIV= %d \n", i, num, div);
-        num = num + 2;
-        div = div + 2;
-    }
     printf("--\n");
-    printf("Soma: %.3f\n", soma);
+    printf("Soma: %.2f\n", resultado);
     printf("--\n");
 }
 
-int somaReferencia(int n){
+
+int soma(n){
+    float resultadoSoma = 0, r = 0;
     int num = 2, div = 1;
-    float * soma;
 
     for (int i = 0; i < n; i++){
-        * soma = * soma +((float)num/(float)div);
-        printf("I= %d, NUM=%d, DIV= %d \n", i, num, div);
+        resultadoSoma = resultadoSoma + ((float)num/(float)div);
+        printf("I= %d, NUM=%d, DIV= %d Result: %2.f\n", i, num, div, resultadoSoma);
         num = num + 2;
         div = div + 2;
     }
-    printf("--\n");
-    printf("Soma: %.3f\n", *soma);
-    printf("--\n");
+
+    return resultadoSoma;
+
+}
+
+int somaReferencia(int n, float *soma){
+    int num = 2, div = 1;
+    *soma = 0;
+
+    for (int i = 0; i < n; i++){
+        *soma = *soma + ((float)num/(float)div);
+        num += 2;
+        div += 2;
+
+    }
+
 }
 int exercicio3() {
     int nTermos;
+    float soma;
     printf("Escreva o número de termos da soma: ");
     scanf("%d", &nTermos);
-
-    somaReferencia(nTermos);
+    somaReferencia(nTermos, &soma);
+    printf("Para %d termos, o resultado é %5.2f \n",nTermos,soma);
 }
 
 int exercicio4(){
